@@ -1,4 +1,4 @@
-# OOP supervision 1
+# OOP supervision 2
 ## Setup
 1. Clone the repo
 2. Install [Maven](https://maven.apache.org/) (if not already installed)
