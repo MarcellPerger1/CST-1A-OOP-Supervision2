@@ -2,7 +2,6 @@
 header-includes:
 - |
     \usepackage{tikz,cancel}
-    \usepackage{tikz-uml}
     \usetikzlibrary{shapes.geometric,positioning}
 ---
 
