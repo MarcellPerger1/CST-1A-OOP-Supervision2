@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Same tests as OOPSortedLinkedList because only the
+// implementation differs, and not the outcome.
 class OOPLazySortedLinkedListTest {
     @Test
     void test() {
