@@ -143,4 +143,13 @@ If the programmer wants a subset o the features of the class, what they should d
 \umlinherit[geometry=|-|]{B}{Common}
 \end{tikzpicture}
 
+### 5.4
+Before adding `NSStudent`: see `Q5P4OnlyCS/*.java`.
+After adding `NSStudent`: see `Q5P4WithNS/*.java`.
+The only thing that needed changing was that `NSStudent` needed adding
+(and the logic to generate the test list was also changed to add some NST students, but that wouldn't be there in real code as it would fetch them from a database).
+
+### 5.5
+See `QP55/*.java`.
+
 
