@@ -110,5 +110,7 @@ See `ooplists/*.java`
 
 
 ### Section 5: Polymorphism
-
-TODO!!!!!!!!!!
+### 5.1
+A class can have attributes and methods and can be instantiated, it's simply a blueprint fo an object.
+An abstract class is the same but can have unimplemented abstract methods that subclasses need to implement (so it can't instantiated directly, it has to be instantiated through a a subclass that implements the required abstract methods).
+An interface cannot have any attributes, it can only have method signatures that classes implementing that interface must provide (though it can provide default implementations for these methods in more modern versions of Java). 
