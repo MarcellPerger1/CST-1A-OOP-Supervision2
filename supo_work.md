@@ -201,3 +201,9 @@ Marker interfaces have no methods that need to be implemented. They are used to 
 
 ### 6.5
 If `SomeOtherClass` has some data that must be copied, then that data will not be copied, it will simply create a new instance of with a new set of attributes present on `SomeOtherClass` (won't be the same value). See `Q6P5/*.java` for example.
+
+### 6.6
+#### (a)-(b)
+See `MyClass.java`.
+
+#### (c)
