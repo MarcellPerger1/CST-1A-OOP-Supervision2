@@ -200,5 +200,4 @@ Which one? I'll just the original one. See `CloneableOOPLinkedList.java`.
 Marker interfaces have no methods that need to be implemented. They are used to mark that a specific type follow certain constraints or supports a specific thing where this isn't/can't be expressed as a method that needs to be implemented. A non-Java example is that Rust has an `Eq` trait (its version of an interface) that marks that equality is well-defined on that type (e.g. `a == a`). An example where `Eq` would not be implemented is floating point types as `NaN != NaN`.
 
 ### 6.5
-If `SomeOtherClass` has some data that must be deep-copied, then this will only do a shallow-copy on that data as `SomeOtherClass.clone()` isn't called (so `SomeOtherClass` can't deep-clone its private attributes).
-
+If `SomeOtherClass` has some data that must be copied, then that data will not be copied, it will simply create a new instance of with a new set of attributes present on `SomeOtherClass` (won't be the same value). See `Q6P5/*.java` for example.
