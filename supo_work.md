@@ -91,12 +91,12 @@ Though this architecture means that an employee cannot be promoted without havin
 ### 4.5
 There will never be any runtime errors, only compile-time errors (as Java is smart enough to figure out at compile-time if you're not allowed to be accessing something)
 
-| | `public` | `protected` | unspecified | `private`
-|-|-|-|-|-|
-|a| OK | OK | OK | Error |
-|b| OK | OK | Error | Error |
-|c| OK | OK | OK | Error |
-|d| OK | Error | Error | Error |
+|   | `public` | `protected` | unspecified | `private` |
+|---|----------|-------------|-------------|-----------|
+| a | OK       | OK          | OK          | Error     |
+| b | OK       | OK          | Error       | Error     |
+| c | OK       | OK          | OK          | Error     |
+| d | OK       | Error       | Error       | Error     |
 
 
 ### 4.6
