@@ -1,6 +1,4 @@
-package Q4P2.PackageB;
-
-import Q4P2.PackageA.ClassA;
+package uk.ac.cam.mp2226.part1a.oop.supo2.Q4P2.PackageB;
 
 public class ClassB {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Q4P2.PackageA;
+package uk.ac.cam.mp2226.part1a.oop.supo2.Q4P2.PackageA;
 
 public class ClassB {
     public static void main(String[] args) {
