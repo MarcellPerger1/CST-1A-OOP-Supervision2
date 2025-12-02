@@ -152,4 +152,30 @@ The only thing that needed changing was that `NSStudent` needed adding
 ### 5.5
 See `QP55/*.java`.
 
+### 5.6
+#### (a)
+\
+\nopagebreak
+Add item: $O(1)$ (amortised),  
+Get nth item: $O(1)$,  
+Contains: $O(n)$,  
+Remove (given the value to remove): $O(n)$ 
+
+Though there are many possible 'list methods' as the term is very vague and there is no one single definition (e.g. is inserting an item at a specific point a 'list method'? Is replacing an existing item a 'list method'?)
+
+#### (b) - (c)
+See `ooplists2/*.java`.
+
+#### (d)
+When we have to double the array (an $O(n)$ operation), it will have added $O(n)$ items
+since the previous expansion so the $O(n)$ expansion cost can be spread ovr the previous
+$O(n)$ additions to give $n$ additions a time complexity of $O(n)$ so the amortized 
+time complexity is $O(1)$ for each insertion.
+
+### 5.7
+(Skipped due to time constraints.)
+
+### 5.8
+
+
 
