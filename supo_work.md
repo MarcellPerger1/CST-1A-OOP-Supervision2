@@ -114,3 +114,33 @@ See `ooplists/*.java`
 A class can have attributes and methods and can be instantiated, it's simply a blueprint fo an object.
 An abstract class is the same but can have unimplemented abstract methods that subclasses need to implement (so it can't instantiated directly, it has to be instantiated through a a subclass that implements the required abstract methods).
 An interface cannot have any attributes, it can only have method signatures that classes implementing that interface must provide (though it can provide default implementations for these methods in more modern versions of Java). 
+
+### 5.2
+Dynamic polymorphism is when the method to call is determined by the actual runtime type of an object, rather than te declared type. This means that we can easily call the same method on each item in a list of items of the base class and then those calls will be dispatched to the correct method (potentially on the child class) based on the actual runtime type of each object.  
+See `Q5P2/*.java` for example.
+
+### 5.3
+This is not a good idea. This is because it means that any classes using this feature will be breaking the Liskov substitution principle as the subclasses cannot be used where the parent class can (as they won't have all of the methods!). Additionally, it could create a problem where a method is inherited but the fields it relies on are not, rendering the method broken on the subclass. And knowing which fields a method depends open completely breaks encapsulation!
+If the programmer wants a subset o the features of the class, what they should do is create a third class with the common features that they want on both classes and have both of the classes individually  inherit the common functionality from that class. For example,  
+
+\begin{tikzpicture} 
+\umlclass{Common}{
+    \# (common attributes)
+}{
+    + (common methods)
+}
+\umlclass[y=-4,x=-3]{A}{
+    - (A-only attributes)
+}{
+    + (A-only methods)
+}
+\umlclass[y=-4,x=3]{B}{
+    - (B-only attributes)
+}{
+    + (B-only methods)
+}
+\umlinherit[geometry=|-|]{A}{Common}
+\umlinherit[geometry=|-|]{B}{Common}
+\end{tikzpicture}
+
+
