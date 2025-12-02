@@ -105,5 +105,10 @@ This is because attributes exhibit static polymorphism so it will look at the de
 However, when methods exhibit dynamic polymorphism so it will look at the runtime type of `a` (`Sub`) and call `Sub.printValue()` and in that method, the compiler knows that the type of `this` will be `Sub` so will use `Sub.value`.
 This is because method dispatch is implemented using vtable, a hidden attribute that hold information about the actual type about the actual runtime type of an object and the method call uses this table to lookup the address of the correct `printValue` function to call.
 
-### 4.7
+### 4.7 - 4.8
+See `ooplists/*.java`
 
+
+### Section 5: Polymorphism
+
+TODO!!!!!!!!!!
