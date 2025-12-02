@@ -99,3 +99,11 @@ There will never be any runtime errors, only compile-time errors (as Java is sma
 |d| OK | Error | Error | Error |
 
 
+### 4.6
+It will print `a.value = Super` and then `Sub.printValue: Sub`.
+This is because attributes exhibit static polymorphism so it will look at the declared type of `a` (`Super`) and access the attributes of that object.
+However, when methods exhibit dynamic polymorphism so it will look at the runtime type of `a` (`Sub`) and call `Sub.printValue()` and in that method, the compiler knows that the type of `this` will be `Sub` so will use `Sub.value`.
+This is because method dispatch is implemented using vtable, a hidden attribute that hold information about the actual type about the actual runtime type of an object and the method call uses this table to lookup the address of the correct `printValue` function to call.
+
+### 4.7
+
