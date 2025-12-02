@@ -179,3 +179,26 @@ time complexity is $O(1)$ for each insertion.
 See `Q5P8/*.java`
 
 
+## Section 6: Object lifecycle, Garbage Collection and Copying Objects
+### 6.1
+#### (a)
+This approach is quite fast and doesn't use much extra memory. However, it has a problem: the memory will get more and more fragmented over time, eventually reaching the point where it's impossible to allocate a large contiguous chunk of memory (e.g. for a large array). Another disadvantage is that it has to iterate over the objects twice: once to mark them and again to add the chunks containing the deleted ones to the free list.
+
+#### (b)
+This approach solves the issue of memory fragmentation but it can get slow as a lot of objects will be moved during the compact stage (a lot of memory read/write operations). It still iterates through the objects twice: once to mark objects and then again to either delete them or to move them to be adjacent to the previous surviving one, at the start of the memory.
+
+#### (c)
+This approach also doesn't have the problem of memory fragmentation but once again, a lot of objects must be copied. This one requires quite a lot of extra memory (twice as much as the other ones) but it only has to loop through the objects once, as it can, on marking an object, move it to the other region (though updating *all* the references sounds like it might be a bit cumbersome and/or slow).
+
+### 6.2
+Making classes immutable means that there is a lot of short-lived objects (as we have to create a new one every time we change something) and Java can collect these very quickly as they are still in the Eden generation by the time they're collected so Java can return that memory to the OS as Eden is garbage-collected quite frequently. Having mutable classes, on the other hand, means that when they can finally be freed, it will take Java a long time to find free their memory as they will have moved quite far through the generations.
+
+### 6.3
+Which one? I'll just the original one. See `CloneableOOPLinkedList.java`.
+
+### 6.4
+Marker interfaces have no methods that need to be implemented. They are used to mark that a specific type follow certain constraints or supports a specific thing where this isn't/can't be expressed as a method that needs to be implemented. A non-Java example is that Rust has an `Eq` trait (its version of an interface) that marks that equality is well-defined on that type (e.g. `a == a`). An example where `Eq` would not be implemented is floating point types as `NaN != NaN`.
+
+### 6.5
+If `SomeOtherClass` has some data that must be deep-copied, then this will only do a shallow-copy on that data as `SomeOtherClass.clone()` isn't called (so `SomeOtherClass` can't deep-clone its private attributes).
+
