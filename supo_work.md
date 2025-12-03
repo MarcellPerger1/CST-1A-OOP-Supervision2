@@ -222,3 +222,15 @@ Because after calling `super.clone`, we have a `CloneTest` object with `mData` s
 
 ### 7.2
 See `Vector3.java`
+
+### 7.3
+See `NamesAndPercentages.java`
+
+### 7.4
+The list is so small that it won't make a very much difference and I would spend the time thinking about this to optimise other parts of the application instead ("Premature optimization is the root of all evil"). However, `LinkedList` would be more performant as it has $O(1)$ insertion and removal on both ends so is suitable to implement the queue structure required, while a `ArrayList` has $O(n)$ insertion/deletion at the front so the implementation will end up being $O(n)$ (well, unless you implement your own circular queue but that would be better done in an array).
+
+### 7.5
+String literals in Java are interned (cached) so the two occurrences of `"Hi"` refer to the same `String` object in memory so the address of `s3` and `s4` is the same (and `==` compares the addresses of the strings so the second `print` is `true`). However, in the first one, each `new String` (by definition) create a new object with its own memory address so `s1` and `s2` point to different memory locations so the first `print` is `true`.
+
+### 7.6
+
