@@ -207,3 +207,18 @@ If `SomeOtherClass` has some data that must be copied, then that data will not b
 See `MyClass.java`.
 
 #### (c)
+Because a copy constructor doesn't do dynamic polymorphism (without reflection) so have some unknown subclass of `MyClass` (e.g. from a list of `MyClass` objects), we can't invoke the correct copy constructor to copy it to be the same class as the original.
+
+### (d)
+If the class is `final` (i.e. can't have any subclasses), then we don't need to worry about the problem of polymorphically copying arbitrary subclasses (as there are no subclasses). This means that the copy constructor has no downsides there.
+
+#### 6.7
+Because after calling `super.clone`, we have a `CloneTest` object with `mData` set as a reference to the same array and we would want to change `mData` to be a clone of itself (this is the deep part the clones all the attributes), but we simply cannot modify `mData` as it is `final`.
+
+
+## Section 7: Collections, Comparison
+### 7.1
+`Vector` is just an old (usually considered obsolete) thead-safe version of `ArrayList` that locks around every operation (generally you want to lock around a group of operations so this isn't the most helpful). `ArrayList` and `LinkedList` both implement the `List` interface, `LinkedList` uses a (doubly) linked list in its implementation (so adding/removing from the ends is fast but accessing elements in the middle is slow). On the other hand, `ArrayList` uses an array in its implementation (wow what a surprise!) so accessing items in the middle is fast but removing items from anywhere but the end is slow. `TreeSet` is a completely different thing entirely - it implements a set where the elements are stored in a sorted order and duplicates are not allowed (it uses a binary search tree to provide logarithmic time access to all elements).
+
+### 7.2
+See `Vector3.java`
