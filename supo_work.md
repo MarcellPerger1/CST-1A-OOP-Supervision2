@@ -233,4 +233,7 @@ The list is so small that it won't make a very much difference and I would spend
 String literals in Java are interned (cached) so the two occurrences of `"Hi"` refer to the same `String` object in memory so the address of `s3` and `s4` is the same (and `==` compares the addresses of the strings so the second `print` is `true`). However, in the first one, each `new String` (by definition) create a new object with its own memory address so `s1` and `s2` point to different memory locations so the first `print` is `true`.
 
 ### 7.6
+See `Q7P6/*.java`
 
+### 7.7
+(Skipped due to time constraints.)
